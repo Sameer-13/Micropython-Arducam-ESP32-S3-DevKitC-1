@@ -22,7 +22,20 @@ A MicroPython driver for the Arducam Mini 5MP Plus camera module (OV5642) on ESP
 
 ## Installation
 
-1. Flash MicroPython firmware to your ESP32-S3.
+### Option A: Using esptool and mpremote (Command Line)
+
+- Download the MicroPython firmware for ESP32-S3 from: [[https://micropython.org/download](https://micropython.org/download/)](https://micropython.org/download/ESP32_GENERIC_S3/)
+
+Install the required tools:
+```bash
+pip install esptool mpremote
+```
+
+1. Flash MicroPython firmware to your ESP32-S3:
+   ```bash
+   esptool.py --chip esp32s3 --port /dev/ttyUSB0 erase_flash
+   esptool.py --chip esp32s3 --port /dev/ttyUSB0 write_flash -z 0 ESP32_GENERIC_S3-xxxxxxxx.bin
+   ```
 
 2. Create a `lib` directory on the ESP32-S3:
    ```
@@ -31,7 +44,7 @@ A MicroPython driver for the Arducam Mini 5MP Plus camera module (OV5642) on ESP
        OV5642_reg.py
    ```
 
-3. Upload the driver files using Thonny, mpremote, or ampy:
+3. Upload the driver files:
    ```bash
    mpremote mkdir lib
    mpremote cp Arducam.py :lib/Arducam.py
@@ -42,6 +55,24 @@ A MicroPython driver for the Arducam Mini 5MP Plus camera module (OV5642) on ESP
    ```bash
    mpremote cp main_example.py :main.py
    ```
+
+### Option B: Using Thonny (GUI)
+
+1. Download and install Thonny from: [https://thonny.org](https://thonny.org/)
+
+2. Download the MicroPython firmware for ESP32-S3 from: [[https://micropython.org/download](https://micropython.org/download/)](https://micropython.org/download/ESP32_GENERIC_S3/)
+
+3. Open Thonny, go to **Tools → Options → Interpreter** and select "MicroPython (ESP32)".
+
+4. Click "Install or update MicroPython" to flash the firmware to your ESP32-S3.
+
+5. Connect to your ESP32-S3.
+
+6. In the file browser, create a `lib` folder on the device.
+
+7. Upload `Arducam.py` and `OV5642_reg.py` to the `lib` folder.
+
+8. Upload your main script as `main.py` to the root of the device.
 
 ## Quick Start
 
