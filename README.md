@@ -7,7 +7,9 @@ A MicroPython driver for the Arducam Mini Plus camera module (OV5642 or OV2640) 
 - ESP32-S3 DevKitC-1
 - Arducam Mini Plus (OV5642 or OV2640)
 
-Note: The example code have been tested on the OV5642 module
+Note: 
+- The example code have been tested on the OV5642 module.
+- If you are going to use the OV2640, make sure to find and download the register map ```OV264_reg.py``` from the internet.
 
 ## Wiring
 
