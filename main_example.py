@@ -35,7 +35,7 @@ cam.Spi_Test(retries=5)
 cam.init()
 time.sleep(0.2)
 
-def try_capture(tag):
+def capture_with_blinking(tag):
     # Flush the cam FIFO buffer
     cam.flush_fifo()
     cam.clear_fifo_flag()
@@ -85,7 +85,7 @@ cam.Spi_write(ARDUCHIP_TIM, tim)
 time.sleep(0.05)
 
 # Capture the image
-length, jpeg = try_capture("TIM=%s" % hex(tim))
+length, jpeg = capture_with_blinking("TIM=%s" % hex(tim))
 
 # Save image
 with open("test.jpg", "wb") as f:
