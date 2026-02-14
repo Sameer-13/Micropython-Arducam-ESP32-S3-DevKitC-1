@@ -1,11 +1,13 @@
-# Arducam Mini 5MP Plus (OV5642) MicroPython Driver
+# Arducam Mini Plus MicroPython Driver
 
-A MicroPython driver for the Arducam Mini 5MP Plus camera module (OV5642) on ESP32-S3 DevKitC-1.
+A MicroPython driver for the Arducam Mini Plus camera module (OV5642 or OV2640) on ESP32-S3 DevKitC-1.
 
 ## Hardware Requirements
 
 - ESP32-S3 DevKitC-1
-- Arducam Mini 5MP Plus (OV5642)
+- Arducam Mini Plus (OV5642 or OV2640)
+
+Note: The example code have been tested on the OV5642 module
 
 ## Wiring
 
