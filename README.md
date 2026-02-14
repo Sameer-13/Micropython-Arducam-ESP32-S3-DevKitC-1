@@ -76,36 +76,7 @@ pip install esptool mpremote
 
 ## Quick Start
 
-```python
-from machine import Pin, SPI, I2C
-import time
-from Arducam import Arducam, JPEG, OV5642
-
-# Configure SPI
-spi = SPI(2, baudrate=2_000_000, polarity=0, phase=0,
-          sck=Pin(12), mosi=Pin(10), miso=Pin(11))
-
-# Configure I2C
-i2c = I2C(0, scl=Pin(14), sda=Pin(13), freq=400_000)
-
-# Initialize camera
-cam = Arducam(spi=spi, cs_pin=9, i2c=i2c)
-cam.CameraType = OV5642
-cam.Set_Camera_mode(JPEG)
-
-cam.Camera_Detection()
-cam.Spi_Test(retries=5)
-cam.init()
-time.sleep(0.2)
-
-# Capture image
-cam.capture()
-jpeg_data = cam.read_jpeg()
-
-# Save to file
-with open("photo.jpg", "wb") as f:
-    f.write(jpeg_data)
-```
+Checkout ```main_example.py``` file
 
 ## File Structure
 
