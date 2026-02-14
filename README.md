@@ -99,6 +99,8 @@ Checkout ```main_example.py``` file
 - 2592x1944
 - 1920x1080
 
+You can easily set config the captured image using the helper functions in ```image_config.py```
+
 ## Troubleshooting
 
 - **SPI interface Error**: Check wiring and ensure correct GPIO pins are used.
